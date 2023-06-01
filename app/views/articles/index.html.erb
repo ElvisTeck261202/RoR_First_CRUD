@@ -1,0 +1,20 @@
+<div class="container-fluid bg-primary text-white" style="padding:1.25em"><h1 class="display-6 text-center ">Ruby On Rails Tutorial</h1></div>
+<div class="container-fluid row justify-content-center">
+<ul class="d-flex">
+    <% @articles.each do |article| %>
+        <div class="card m-4 btn btn-outline-primary" style="width: 18rem;">
+        <div class="card-body text-center">
+            <a class="card-text" href="/articles/<%= article_path(article) %>">
+                <%= link_to article.title, article %>
+            </a>    
+        </div>
+        </div>
+    <% end %>
+</ul>
+
+  <div class=" w-25 row justify-content-center btn btn-outline-success text-center rounded p-3">
+    <%= link_to "New Article", new_article_path %>
+  </div>
+</div>
+
+
